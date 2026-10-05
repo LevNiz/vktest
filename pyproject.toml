@@ -1,0 +1,26 @@
+[project]
+name = "green-button-tapper"
+version = "1.0.0"
+description = "Launch an Android app over ADB, find a green button on the screen and tap it"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "opencv-python-headless>=4.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+tap-green-button = "green_button_tapper.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["green_button_tapper"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
